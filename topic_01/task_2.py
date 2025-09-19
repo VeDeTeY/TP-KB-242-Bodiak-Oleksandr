@@ -63,3 +63,4 @@ print(word_lower)
 text_str = str(input("Enter text: "))
 text_lower = text_str.lower()
 print(text_lower)
+
