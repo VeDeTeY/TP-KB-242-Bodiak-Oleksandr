@@ -1,15 +1,16 @@
-import bisect
+fruits = ["apple", "cherry", "melon"]
+new_fruit = input("Введіть новий фрукт: ")
 
-# Початковий відсортований список
-fruits = ["apple", "cherry", "durian"]
-print("Початковий список:", fruits)
+def find_position(sorted_list, new_item):
+    # проходження по елементах із списку
+    for i in range(len(sorted_list)):
+        # якщо новий елемент "менший" за поточний — вставляти сюди
+        if new_item < sorted_list[i]:
+            return i
+    # якщо більший за всі — вставляється в кінець списку 
+    return len(sorted_list)
 
-new_fruit = input("Введіть фрукт: ")
-
-# Знаходимо позицію для вставки нового фрукта #
-pos = bisect.bisect_left(fruits, new_fruit)
-
-# Вставляємо новий фрукт у правильне місце #
+pos = find_position(fruits, new_fruit)
 fruits.insert(pos, new_fruit)
 
 print("Позиція для вставки:", pos)
