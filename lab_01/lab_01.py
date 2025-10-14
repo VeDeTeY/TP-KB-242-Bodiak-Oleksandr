@@ -1,10 +1,10 @@
 
-# Початковий список студентів (уже відсортований за іменем)
+################ Початковий список студентів уже відсортований за іменем###############
 students = [
-    {"name": "Bob",  "phone": "0631234567", "email": "bob@gmail.com",  "group": "КБ-101"},
-    {"name": "Emma", "phone": "0639876543", "email": "emma@gmail.com", "group": "КБ-102"},
-    {"name": "Jon",  "phone": "0635555555", "email": "jon@gmail.com",  "group": "КБ-101"},
-    {"name": "Zak",  "phone": "0631111111", "email": "zak@gmail.com",  "group": "КБ-103"}
+    {"name": "Bob",  "phone": "0631234567", "email": "bob@gmail.com",  "group": "КБ-242"},
+    {"name": "Emma", "phone": "0639876543", "email": "emma@gmail.com", "group": "КБ-242"},
+    {"name": "Jon",  "phone": "0635555555", "email": "jon@gmail.com",  "group": "КБ-242"},
+    {"name": "Zak",  "phone": "0631111111", "email": "zak@gmail.com",  "group": "КБ-242"}
 ]
 
 
