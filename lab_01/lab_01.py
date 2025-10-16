@@ -37,8 +37,6 @@ def addNewElement():
     students.insert(insertPosition, newItem)
     print("Новий студент доданий.\n")
     return
-
-
 #############Функція для видалення студента#################
 def deleteElement():
     name = input("Введіть ім'я студента для видалення: ")
@@ -61,48 +59,37 @@ def deleteElement():
 def updateElement():
     name = input("Введіть ім'я студента, дані якого хочете змінити: ")
     found = False
-
     for item in students:
         if item["name"] == name:
             found = True
             print("\nЗнайдено запис:")
             print(f"Ім'я: {item['name']}, Телефон: {item['phone']}, Email: {item['email']}, Група: {item['group']}\n")
-
-            # Запит нових даних (Enter = залишити без змін)
-            new_name = input("Нове ім'я (Enter щоб залишити): ")
-            new_phone = input("Новий телефон (Enter щоб залишити): ")
-            new_email = input("Новий email (Enter щоб залишити): ")
-            new_group = input("Нова група (Enter щоб залишити): ")
-
-            ########### Оновлення даних###############
-            if new_name != "":
+        break
+    new_name = input("Нове ім'я (Enter щоб залишити): ")
+    new_phone = input("Новий телефон (Enter щоб залишити): ")
+    new_email = input("Новий email (Enter щоб залишити): ")
+    new_group = input("Нова група (Enter щоб залишити): ")
+    if new_name != "":
                 item["name"] = new_name
-            if new_phone != "":
+    if new_phone != "":
                 item["phone"] = new_phone
-            if new_email != "":
+    if new_email != "":
                 item["email"] = new_email
-            if new_group != "":
+    if new_group != "":
                 item["group"] = new_group
 
-            ############## Зберігаємо відсортований порядок###############
-            updated = item.copy()
-            students.remove(item)
-
-            insertPosition = 0
-            for elem in students:
+    updated = item.copy()
+    students.remove(item)
+    insertPosition = 0
+    for elem in students:
                 if updated["name"] > elem["name"]:
                     insertPosition += 1
                 else:
                     break
-            students.insert(insertPosition, updated)
-
-            print(" Дані студента успішно оновлено!\n")
-            break
-
+    students.insert(insertPosition, updated)
+    print(" Дані студента успішно оновлено!\n")
     if not found:
-        print("Студента з таким ім'ям не знайдено.\n")
-
-    return
+           print("Студента з таким ім'ям не знайдено.\n")
 
 
 ######### Основне меню програми #################
