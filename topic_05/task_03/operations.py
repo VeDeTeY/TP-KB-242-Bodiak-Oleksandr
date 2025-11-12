@@ -1,5 +1,3 @@
-# operations.py
-
 from functions import add, minus, multiply, divide
 
 def numbers():
