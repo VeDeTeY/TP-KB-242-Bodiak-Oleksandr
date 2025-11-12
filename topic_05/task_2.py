@@ -1,6 +1,6 @@
 import requests
 
-############ Отримання всіх курсів валют з API НБУ #############
+############ Підключення API НБУ #############
 response = requests.get("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
 
 def rates():
@@ -20,13 +20,13 @@ def input_amount():
 
 ############ Основна функція #############
 def main():
-    print("Конвертер валют (USD, EUR, PLN → UAH)")
+    print("Конвертер валют (USD, EUR, PLN to UAH)")
     
     # Отримуємо дані від користувача
     currency = input_currency()
     amount = input_amount()
     
-    # Конвертуємо
+    ############## Конвертація ##############
     for elem in response.json():
         if elem["cc"] == currency:
             converted_amount = amount * elem["rate"]
